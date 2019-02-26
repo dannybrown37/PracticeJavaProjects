@@ -19,6 +19,8 @@ public class StudentDataBaseApp {
 			System.out.println(students[n].showInfo());
 		}
 		
+		in.close(); // after we're done with everything else
+		
 	}
 
 }
