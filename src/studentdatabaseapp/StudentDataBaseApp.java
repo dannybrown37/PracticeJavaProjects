@@ -7,7 +7,7 @@ public class StudentDataBaseApp {
 	public static void main(String[] args) {
 		
 		// Ask user how many students will be added to database
-		Scanner in = new Scanner(System.in); // import java.util.Scanner; required
+		Scanner in = new Scanner(System.in); // import java.util.Scanner;
 		System.out.println("How many students do you want to add? ");
 		int numOfStudents = in.nextInt();
 		Student [] students = new Student[numOfStudents];

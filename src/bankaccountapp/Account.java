@@ -1,8 +1,9 @@
 package bankaccountapp;
 
-public abstract class Account implements IBaseRate { // abstract means we can't create objects from Account class
-													 // We can however create objects that inherit from it
-													 // Using an interface of IBaseRate with the idea we will get these from elsewhere
+public abstract class Account implements IBaseRate { 
+	// abstract means we can't create objects from Account class
+	// We can however create objects that inherit from it
+	// Using an interface of IBaseRate assuming we will get these from elsewhere
 
 	// List common properties for checking and savings accounts
 	private String name;
@@ -45,29 +46,37 @@ public abstract class Account implements IBaseRate { // abstract means we can't 
 		printBalance();
 	}
 	
-	// Checking and Savings must implement the inherited abstract method setRate()
+	// Checking/Savings must implement the inherited abstract method setRate()
 	public abstract void setRate(); 
 	
 	public void deposit(double amount) {
 		this.balance += amount;
-		System.out.println("Depositing $" + amount + " to account number " + this.accountNumber + ".");
+		System.out.println("Depositing $" + amount + " to account number " +
+				this.accountNumber + "."
+		);
 		this.printBalance();
 	}
 	
 	public void withdraw(double amount) {
 		this.balance -= amount;
-		System.out.println("Withdrawing $" + amount + " from account number " + this.accountNumber + ".");
+		System.out.println("Withdrawing $" + amount + 
+				" from account number " + this.accountNumber + "."
+		);
 		this.printBalance();
 	}
 	
 	public void transfer(String toWhere, double amount) {
 		this.balance -= amount;
-		System.out.println("Transfering $" + amount + " from account number " + this.accountNumber + " to " + toWhere + ".");
+		System.out.println("Transfering $" + amount + " from account number " + 
+				this.accountNumber + " to " + toWhere + "."
+		);
 		this.printBalance();
 	}
 	
 	public void printBalance() {
-		System.out.println("The balance of account number " + this.accountNumber + " is now $" + this.balance);
+		System.out.println("The balance of account number " + 
+			this.accountNumber + " is now $" + this.balance
+		);
 	}
 	
 	public void showInfo() {

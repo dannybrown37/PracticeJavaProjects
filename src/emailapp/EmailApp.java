@@ -8,7 +8,9 @@ public class EmailApp {
 		
 		System.out.println(emailOne.showInfo());
 		
-		emailOne.setAlternateEmail(emailOne.getUserName().replace(" ",  "") + "@gmail.com");
+		
+		emailOne.setAlternateEmail(emailOne.getUserName().replace(" ",  "") + 
+				"@gmail.com");
 		System.out.println("Alternate Email: " + emailOne.getAlternateEmail());
 	}
 

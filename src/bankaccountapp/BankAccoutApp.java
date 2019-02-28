@@ -11,7 +11,10 @@ public class BankAccoutApp {
 		List<Account> accounts = new LinkedList<Account>();
 		
 		// CSV local location
-		String file = "C:\\users\\danny\\java\\eclipse-workspace\\javaprojects\\src\\bankaccountapp\\NewBankAccounts.csv";
+		String file = (
+				"C:\\users\\danny\\java\\eclipse-workspace\\javaprojects" + 
+				"\\src\\bankaccountapp\\NewBankAccounts.csv"
+		);
 		
 		// Read a CSV file and put data into array list
 		List<String[]> newAccountHolders = utilities.CSV.read(file);
@@ -21,7 +24,8 @@ public class BankAccoutApp {
 			String name = accountHolder[0];
 			String ssn = accountHolder[1];
 			String accountType = accountHolder[2];
-			double initDeposit = Double.parseDouble(accountHolder[3]); // get a double from a string
+			double initDeposit = Double.parseDouble(accountHolder[3]); 
+			// parseDouble can get a double from a string
 			if (accountType.equals("Savings")) {
 				accounts.add(new Savings(name, ssn, initDeposit));
 			} else if (accountType.equals("Checking")) {
@@ -34,13 +38,14 @@ public class BankAccoutApp {
 		// to access a single element in a linked list, use get(), not [i]
 		accounts.get(0).showInfo();
 		
-		// iterate through accounts data structure to showInfo() for each account
+		// iterate through accounts data structure, showInfo() for each account
 		for (Account acc : accounts) {
-			acc.showInfo(); // no need for get() method because iterating through each in for loop
+			acc.showInfo(); 
+			// no need for get() method, iterating through each in for loop
 		}
 		
 		// example of test
-		accounts.get((int) Math.random() * 20).deposit(Math.floor(Math.random() * 100) / 100 * Math.pow(10, 3));
+		accounts.get((int) Math.random() * 20).deposit(1000);
 		
 
 		/* // unit tests

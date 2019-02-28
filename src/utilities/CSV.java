@@ -10,7 +10,9 @@ import java.util.List;
 public class CSV {
 
 	// This method will read data from a CSV file and return as a list
-	public static List<String[]> read(String file) { // collections are a data type that allow you to add elements dynamically
+	// collections are a data type that allow you to add elements dynamically
+	public static List<String[]> read(String file) { 
+		
 		List<String[]> data = new LinkedList<String[]>();
 		
 		String dataRow;

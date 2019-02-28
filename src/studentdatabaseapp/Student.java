@@ -10,7 +10,8 @@ public class Student {
 	private String studentId;
 	private List<String> courses = new ArrayList<String>();
 	private int tuitionBalance = 0;
-	private static int costOfCourse = 600; // static is true for the object itself, not just the instance
+	private static int costOfCourse = 600; 
+	// static is true for the object itself, not just the instance
 	private static int id = 1000; // starting value stays with the class
 	
 	// Constructor: name and ID
@@ -26,7 +27,9 @@ public class Student {
 		
 		// Grade level
 		while (this.gradeLevel == "") {
-			System.out.println("1. Freshman\n2. Sophomore\n3. Junior \n4. Senior\nEnter student class level: ");
+			System.out.println("1. Freshman\n2. Sophomore\n3. Junior \n" + 
+					"4. Senior\nEnter student class level: "
+			);
 			int choice = in.nextInt();
 			if (choice == 1) {
 				this.gradeLevel = "Freshman";
@@ -51,9 +54,12 @@ public class Student {
 	
 	// Generate the student ID
 	private void setId() {
-		id++; // increment static id for each new student created to ensure unique id for each student
+		id++; 
+		// increment static id for each new student created to ensure 
+		// unique id for each student
 		this.studentId = this.gradeLevel.charAt(0) + "" + id; 
-		// adding the empty string casts the entire statement as a string despite id being an int
+		// adding the empty string above casts the entire statement as a 
+		// string despite id being an int
 	}
 
 	// Enroll student in any of courses and calculate tuition as we go
@@ -85,7 +91,9 @@ public class Student {
 		int payment = in.nextInt();
 		this.tuitionBalance -= payment;
 		System.out.println("Thank you for your payment of $" + payment + ".");
-		System.out.println("Your new tuition balance is: $" + this.tuitionBalance);
+		System.out.println("Your new tuition balance is: $" + 
+				this.tuitionBalance
+		);
 	}
 	
 	// Show status of student: name, ID, courses enrolled, balance

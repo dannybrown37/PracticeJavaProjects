@@ -21,7 +21,8 @@ public class Checking extends Account {
 	
 	@Override
 	public void setRate() {
-		this.rate = getBaseRate() * .15; // this.rate is inherited from Account class
+		this.rate = getBaseRate() * .15; 
+		// this.rate is inherited from Account class
 	}
 	
 	public void showInfo() {
